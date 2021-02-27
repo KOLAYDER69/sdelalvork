@@ -1,32 +1,19 @@
-// 'use strict';
-let min = Math.floor(Math.random()*10);
-console.log(min);
-
-let number = 4.6; 
-console.log(4/0);
-
-console.log(vasya); //
-var vasya = "ivan";
-
-
-const obj = {
-    name: "John",
-    age: 25,
-    isMarries: false
+let numberOfFilms = prompt("Сколько фильмов вы уже смотрели?", "");
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
 };
 
-console.log(obj);
+let lastMovie = prompt("Какой последний фильм смотрели?", "");
+let lastRate = prompt("На сколько его оцените?", "");
 
 
-const answers = [];
+personalMovieDB.movies = {
+    [lastMovie]: lastRate
+};
 
-answers[0] = prompt('Как ваше имя?', "");
+console.log(personalMovieDB);
 
-answers[1] = prompt('Как ваше фамилия?', "");
-
-answers[2] = prompt('Сколько вам лет?', "");
-
-console.log(answers);
-
-document.write(answers); 
-console.log("1");

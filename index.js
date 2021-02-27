@@ -1,43 +1,35 @@
-"use strict";
+'use strict';
 
-let r = Math.floor(Math.random()*10);
-if (4 == r) {
-    console.log("OK!");
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+          b = prompt('На сколько оцените его?', '');
+    if (a != null && b != null && a != '' && b != '' && a.length <50) {
+    personalMovieDB.movies[a] = b;
+    console.log('rabotaet');
+    } else {
+        console.log('oshibka');
+        i--;
+    }
+}
+
+if (personalMovieDB.count < 10) {
+    console.log("Просмотрено нихуя");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    console.log('Вы классный зритель');
+} else if (personalMovieDB.count > 30) {
+    console.log("Вы киноман");
 } else {
-    console.log("ERRROR");
-}
-console.log(r);
-
-const num = 50;
-if (num < 49) {
-    console.log('ERRRRRKA');
-} else if (num > 100) {
-    console.log("mnogo");
-} else {
-    console.log("OK!");
+    console.log("ERRRRROR");
 }
 
-(num === 50) ? console.log("OK!") : console.log('ERRRRRKA');
-
-const numx = 50;
-switch (numx) {
-    case 49:
-        console.log("erka");
-        break;
-    case 100:
-        console.log('ERKA');
-        break;
-    case 50:
-        console.log("GOOD");
-        break;
-    default:
-        console.log("ne v etot raz");
-        break;
-}
-
-const num1 = 50;
-while (num < 55) {
-    console.log(num);
-    num++
-    
-}
+console.log(personalMovieDB);

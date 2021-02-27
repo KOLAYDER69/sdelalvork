@@ -9,6 +9,8 @@ const personalMovieDB = {
 
 let lastMovie = prompt("Какой последний фильм смотрели?", "");
 let lastRate = prompt("На сколько его оцените?", "");
+let lastRate1 = prompt("На сколько его оцените?", "");
+
 
 
 personalMovieDB.movies = {
